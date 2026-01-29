@@ -7,10 +7,13 @@ clock = pygame.time.Clock()
 running = True
 s = 1
 jogar = pygame.image.load('jogar.png').convert_alpha()
-jogar = pygame.transform.scale(jogar, (900, 720))
+jogar = pygame.transform.scale(jogar, (350, 250))
 sair = pygame.image.load('sair.png').convert_alpha()
+sair = pygame.transform.scale(sair, (350, 250))
+sair_rect = sair.get_rect()
+sair_rect.topleft = (520, 400)
 jogar_rect = jogar.get_rect()
-jogar_rect.topleft = (146, 392)
+jogar_rect.topleft = (120, 400)
 
 
 while running:
@@ -22,13 +25,15 @@ while running:
       background = pygame.transform.scale(background, (1280, 720))
       screen.blit(background, (0, 0))
       screen.blit(jogar, jogar_rect.topleft)
+      screen.blit(sair, sair_rect.topleft)
     elif s == 2:
-      background = pygame.image.load('meio.png')
+      background = pygame.image.load('sair.png')
       background = pygame.transform.scale(background, (1280, 720))
     if event.type == pygame.MOUSEBUTTONDOWN:
-      print(event.pos[0])
-      print(event.pos[1])
-
+      if sair_rect.collidepoint(event.pos):
+        pygame.quit
+      elif jogar_rect.collidepoint(event.pos):
+        s = 2
 
   pygame.display.flip()
 
