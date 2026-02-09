@@ -1,0 +1,3 @@
+Isso foi muito mais dificil doq a gente esperava então n deu pra finalizar
+clicar nos balões faz eles tomarem dano (3 pra estourar) e apertar espaço spawna mais um, (so o balão mais rapido toma dano)
+quando deixa um passar chega na end screen
