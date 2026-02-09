@@ -68,12 +68,6 @@ def spawn_balaov():
     balaov = oppv(path, pg.image.load("fotos/rb.png"))
     balao.add(balaov)
 
-towerg = pg.sprite.Group()
-tower_img = pg.image.load("fotos/snipe.png").convert_alpha()
-tower_img = pg.transform.scale(tower_img, (48, 48))
-
-indo = 0
-
 
 font = pg.font.Font('fotos/Pixel.ttf', 40)
 font2 = pg.font.Font('fotos/Pixel.ttf', 24)
@@ -148,10 +142,8 @@ while running:
     elif cash >= 0:
       screen.blit(textoc, (1176, 675))
     balaov.move()
-    towerg.update()
     balao.update()
     balao.draw(screen)
-    towerg.draw(screen) 
   elif s == 3:
     background = pg.image.load('fotos/fim.png')
     background = pg.transform.scale(background, (1280, 720))
